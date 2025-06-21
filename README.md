@@ -68,7 +68,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -134,4 +134,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### 许可证
 
-本项目使用 MIT 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件。 
+本项目使用 Apache License 2.0 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件。 
