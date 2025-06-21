@@ -7,7 +7,7 @@
 ---
 
 <a name="english-version"></a>
-## English Version
+## English
 
 ### AcademiaPortal
 
@@ -59,7 +59,7 @@ AcademiaPortal is a comprehensive web application designed for academic institut
 ---
 
 <a name="chinese-version"></a>
-## 中文版本
+## 中文
 
 ### 学术门户网站
 
