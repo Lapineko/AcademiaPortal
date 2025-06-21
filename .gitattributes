@@ -1,0 +1,31 @@
+# 将所有文本文件的行结束符标准化为LF，防止Windows/Linux/Mac换行符不一致问题
+* text=auto eol=lf
+
+# 声明特定文件为文本文件
+*.java text
+*.jsp text
+*.html text
+*.xml text
+*.css text
+*.js text
+*.md text
+*.properties text
+*.sql text
+*.txt text
+
+# 声明二进制文件
+*.jar binary
+*.war binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary 

@@ -56,6 +56,20 @@ AcademiaPortal is a comprehensive web application designed for academic institut
    http://localhost:8080/AcademiaPortal_war_exploded
    ```
 
+### Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ---
 
 <a name="chinese-version"></a>
@@ -106,4 +120,18 @@ AcademiaPortal is a comprehensive web application designed for academic institut
    或者使用war_exploded方式部署时:
    ```
    http://localhost:8080/AcademiaPortal_war_exploded
-   ``` 
+   ```
+
+### 贡献指南
+
+欢迎贡献！请随时提交 Pull Request。
+
+1. Fork 本仓库
+2. 创建您的特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交您的更改 (`git commit -m 'Add some amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 打开一个 Pull Request
+
+### 许可证
+
+本项目使用 MIT 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件。 
