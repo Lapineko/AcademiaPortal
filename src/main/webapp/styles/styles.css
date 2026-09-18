@@ -1,0 +1,997 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
+    padding-top: 40px;
+}
+
+/* 容器样式 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #0066cc, #009988);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+}
+
+.logo {
+    padding: 0;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+}
+
+.logo-image {
+    height: 60px;
+    width: auto;
+}
+
+.name-image {
+    height: 40px;
+    width: auto;
+    margin-left: 10px;
+}
+
+/* 导航单 */
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 0 1 auto;
+    white-space: nowrap;
+}
+
+.nav li {
+    position: relative;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: white;
+    white-space: nowrap;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width: 150px;
+    list-style: none;
+    z-index: 1001;
+}
+
+.nav li.active .submenu {
+    display: block;
+}
+
+.nav > li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.submenu li {
+    color: #000000;
+    padding: 10px 15px;
+}
+
+.submenu li:hover {
+    background: #f5f5f5;
+    color: #000000;
+}
+
+/* 轮播图样式重构 */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none; /* 默认隐藏所有幻灯片 */
+}
+
+.carousel-slide:first-child {
+    display: block; /* 显示第一张幻灯片 */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.indicator {
+    width: 100px;
+    height: 60px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    border-color: #ffffff;
+    opacity: 1;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.indicator:hover {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.indicator img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1200px) {
+    .carousel {
+        height: 350px;
+    }
+    .indicator {
+        width: 90px;
+        height: 54px;
+    }
+    .logo-image {
+        height: 50px;
+    }
+
+    .name-image {
+        height: 35px;
+    }
+    .logo {
+        margin-right: 80px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .carousel {
+        height: 250px;
+        margin-top: 35px;
+    }
+    .indicator {
+        width: 70px;
+        height: 42px;
+    }
+    .logo-image {
+        height: 45px;
+    }
+
+    .name-image {
+        height: 30px;
+    }
+
+    .nav li {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    .logo {
+        margin-right: 60px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .carousel {
+        height: 250px;
+        margin-top: 35px;
+    }
+    .indicator {
+        width: 70px;
+        height: 42px;
+    }
+    .navbar {
+        position: fixed;
+        padding: 10px 0;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        justify-content: flex-start;
+    }
+
+    .logo {
+        position: static;
+        padding-left: 15px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        transform: none;
+        left: auto;
+    }
+
+    .logo-image {
+        height: 40px;
+    }
+
+    .name-image {
+        height: 25px;
+        margin-left: 10px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: linear-gradient(90deg, #0066cc, #009988);
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav > li {
+        width: 100%;
+        text-align: left;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        font-size: 16px;
+    }
+
+    .submenu {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 5px 0;
+    }
+
+    .submenu li {
+        padding: 12px 30px;
+        font-size: 14px;
+        color: #ffffff;
+    }
+
+    .carousel {
+        margin-top: 70px;
+    }
+
+    .news-section {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel {
+        height: 200px;
+        margin-top: 30px;
+    }
+    .indicator {
+        width: 60px;
+        height: 36px;
+        gap: 5px;
+    }
+    .logo-image {
+        height: 35px;
+    }
+
+    .name-image {
+        height: 22px;
+    }
+
+    .nav {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .nav > li {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .submenu li {
+        padding: 10px 25px;
+        font-size: 13px;
+    }
+
+    .carousel {
+        margin-top: 60px;
+    }
+
+    .menu-toggle {
+        margin-left: 30px;
+    }
+}
+
+/* 汉堡菜单按钮样式 - 确保这部分代码放在最后，避免被覆盖 */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 0; /* 移除内边距 */
+}
+
+/* 汉堡菜单的三条线样式 */
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* 汉堡菜单激活时的动画效果 */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* 移动端样式 */
+@media screen and (max-width: 1100px) {
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* 其他移动端样式保持不变... */
+}
+
+/* 修改子菜单显示逻辑，移除hover效果 */
+.nav > li:hover .submenu {
+    display: none; /* 移除hover时显示子菜单的效果 */
+}
+
+.nav > li.active .submenu {
+    display: block; /* 只在active类存在时显示子菜单 */
+}
+
+/* 移动端样式调整 */
+@media screen and (max-width: 1100px) {
+    /* ... 其他媒体查询代码保持不变 ... */
+
+    .nav > li:hover {
+        background: none; /* 移除hover效果 */
+    }
+
+    .nav > li.active {
+        background: rgba(255, 255, 255, 0.1); /* 激活时的背景色 */
+    }
+
+    .submenu {
+        display: none;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        position: static;
+        margin-top: 10px;
+    }
+
+    .nav > li.active .submenu {
+        display: block;
+    }
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .news-container {
+        flex-direction: column;
+    }
+
+    .news-list {
+        flex: none;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+    }
+
+    .news-content {
+        padding: 0;
+    }
+
+    .content-title {
+        font-size: 20px;
+    }
+}
+
+/* 修改子菜单文字颜色为色 */
+.sidebar .nav-item .collapse .nav-link,
+.sidebar .nav-item .collapsing .nav-link {
+    color: #000000;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+}
+
+/* 修改悬浮状态下的文字颜色 */
+.sidebar .nav-item .nav-link:hover,
+.sidebar .nav-item .collapse .nav-link:hover,
+.sidebar .nav-item .collapsing .nav-link:hover {
+    color: #000000;
+    background-color: rgba(200, 200, 200, 0.1);
+}
+
+/* 确保折叠状态下的子菜单文字也是黑色 */
+.sidebar.toggled .nav-item .collapse .nav-link,
+.sidebar.toggled .nav-item .collapsing .nav-link {
+    color: #000000;
+}
+
+/* 修改新闻部分的样式 */
+.news-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.news-row {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.news-list {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: calc(50% - 15px);
+}
+
+.main-news {
+    width: calc(50% - 15px);
+}
+
+.featured-news {
+    width: calc(50% - 15px);
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.featured-item {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.featured-item:hover {
+    transform: scale(1.02);
+}
+
+.featured-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-item h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    margin: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* 特色新闻响应式设计 */
+@media (max-width: 1200px) {
+    .featured-item {
+        height: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .featured-item {
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-row {
+        flex-direction: column;
+    }
+
+    .news-list, 
+    .main-news, 
+    .featured-news {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .featured-item {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-item {
+        height: 160px;
+    }
+    
+    .featured-item h3 {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* 添加滚动条样式 */
+.nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* 基于 JavaScript 检测结果显示移动端样式 */
+body.mobile-view .navbar {
+    justify-content: flex-start;
+}
+
+body.mobile-view .logo {
+    position: static;
+    padding-left: 15px;
+    margin: 0;
+}
+
+body.mobile-view .menu-toggle {
+    display: flex;
+}
+
+body.mobile-view .nav {
+    display: none;
+    position: fixed;
+    /* 其他移动端样式... */
+}
+
+body.mobile-view .nav.active {
+    display: block;
+}
+
+/* 当 logo 开始被压缩时切换到移动端样式 */
+@media screen and (max-width: 1100px), (max-width: 1200px) and (min-width: 300px) {
+    /* 检测 logo 是否有足够空间 */
+    @supports (max-width: calc(100vw - 300px)) {
+        @media (max-width: calc(100vw - 300px)) {
+            .navbar {
+                justify-content: flex-start;
+            }
+
+            .logo {
+                min-width: auto;
+                position: static;
+                padding-left: 15px;
+                margin: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: linear-gradient(90deg, #0066cc, #009988);
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                overflow-y: auto;
+            }
+
+            .nav.active {
+                display: block;
+            }
+        }
+    }
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 登录页面样式 */
+.login-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans SC', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.login-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.login-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.login-form .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.form-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #666;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group input:valid {
+    border-bottom-color: #1e3c72;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: #1e3c72;
+}
+
+.focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1e3c72;
+    transition: 0.3s;
+}
+
+.form-group input:focus ~ .focus-border {
+    width: 100%;
+}
+
+.login-btn {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.login-btn .ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .login-wrapper {
+        padding: 10px;
+    }
+    
+    .login-container {
+        padding: 30px 20px;
+    }
+    
+    .login-header h2 {
+        font-size: 24px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+    }
+}
+
+/* 新闻列表的基本样式 */
+.news-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.news-item {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.news-title {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 15px;
+}
+
+.news-date {
+    color: #999;
+    font-size: 0.9em;
+}
+
+/* 新闻标题栏样式 */
+.news-title-bar {
+    background: linear-gradient(90deg, #0066cc 0%, #009988 100%);
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news-title-bar h2 {
+    color: #fff;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.news-title-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transform: translateY(-2px);
+}
+
+.news-title-bar a:hover {
+    opacity: 1;
+}
+
+.news-list {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: calc(50% - 15px);
+}
+
+/* 响应式布局调整 */
+@media (max-width: 768px) {
+    .news-row {
+        flex-direction: column;
+    }
+
+    .news-list, 
+    .main-news, 
+    .featured-news {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .featured-item {
+        height: 200px;
+    }
+}
+
+.more-link {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.more-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.more-link a:hover {
+    color: #333;
+}
+
